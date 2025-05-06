@@ -1,0 +1,108 @@
+<script>
+    const partygoer = sessionStorage.getItem("partygoer")
+    console.log("formissa: " + sessionStorage.getItem("partygoer"))
+    if (partygoer) {
+        document.addEventListener("DOMContentLoaded", () => {
+            const emailInput = document.getElementById("email");
+            emailInput.value = partygoer;
+        });
+    }
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Party SignUp</title>
+</head>
+<body>
+    
+    <div id="container">
+        <nav>
+            <ul>
+                <li><a href="./list.html">List of SignUp</a></li>
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a id="logout" href="./index.html">Logout</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Party SignUp</h1>
+        </header>
+        <div id="content">
+            <div id="info">
+                <h2>Info</h2>
+                <p>Welcome to the party! Please fill out the form below to sign up.</p>
+                <p>We will send you a confirmation email with all the details.</p>
+                <p>If you have any allergies, please let us know in the form.</p>
+                <p>We look forward to seeing you!</p>
+            </div>
+            <div id="forms">
+                
+                <form>
+                
+                <div id="personal-info">
+                    <h3>Personal information</h3>
+                    <div class="form-row">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" placeholder="fname"/>
+                    </div>
+                    <div class="form-row">
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" placeholder="lname"/>
+                    </div>
+                    <div class="form-row">
+                        <label for="pnum">Phone number:</label>
+                        <input type="text" id="pnum" placeholder="pnum"/>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="email"/>                    </div>
+                    <div class="form-row">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" placeholder="address"/>                    </div>
+                </div>
+                </form>
+                
+                <form>
+                    <div id="allergies">
+                <h3>Allergies</h3>
+                <ul>
+                    <li>
+                        <label for="milk">Milk</label>
+                        <input type="checkbox" id="milk" name="milk" value="1">
+                    </li>
+                    <li>
+                        <label for="egg">Egg</label>
+                        <input type="checkbox" id="egg" name="egg" value="1">
+                    </li>
+                    <li>
+                        <label for="gluten">Gluten</label>
+                        <input type="checkbox" id="gluten" name="gluten" value="1">
+                    </li>
+                    <li>
+                        <label for="nuts">Nuts</label>
+                        <input type="checkbox" id="nuts" name="nuts" value="1">
+                    </li>
+                    <li>
+                        <label for="fish">Fish</label>
+                        <input type="checkbox" id="fish" name="fish" value="1">
+                    </li>
+                    <li>
+                        <label for="other">Other</label>
+                        <input type="text" id="other" name="other" value="">
+                    </li>
+                </ul>
+                </div>
+                </form>
+                
+            </div>
+            <div><button type="button">Sign Up</button></div>
+            
+            <footer>
+                <p>&copy; 2025 JansQ Party SignUp. All rights reserved.</p>
+            </footer>
+            <script type="module" src="./js/functions.js"></script>
+</body>
+</html>
