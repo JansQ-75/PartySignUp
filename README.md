@@ -102,5 +102,5 @@ firebase deploy
 
 - [Live App: PartySignUp](https://signup4party.web.app)
     - _Hosted on Firebase_
-- [Demo Video](https://youtu.be/0FgJx9zbAdE)
+- [Demo Video](https://youtu.be/duug1HZH_Rw)
    - _Demo video about the web application_
