@@ -39,11 +39,11 @@ document.querySelector('button').addEventListener('click', async () => {
 
     try {
         await addDoc(collection(db, "ilmoittautumiset"), dataToSend);
-        console.log("Tallennus onnistui!");
+        console.log("Stored data successfully!");
         window.location.replace('./thanks.html');
       } catch (error) {
-        console.error("Tallennus epäonnistui:", error);
-        alert("Virhe tietojen tallennuksessa!");
+        console.error("Failed to store data:", error);
+        alert("Error storing data!");
       }
 
     // Tyhjennetään lomakekentät
@@ -66,12 +66,6 @@ document.querySelector('button').addEventListener('click', async () => {
 
 document.querySelector("#logout").addEventListener("click", (event) => {
   event.preventDefault();
-  console.log("testi");
-  const userDetails = sessionStorage.getItem("userDetails")
-  if (userDetails) {
-    sessionStorage.removeItem("userDetails");
-    console.log("tiedot poistettu: " + userDetails);
-  }
   sessionStorage.clear();
   window.location.replace("./index.html");
 });
