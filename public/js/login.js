@@ -1,15 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDRwSYv0IIUKPCeuEliiFsRae0iNjMLLVw",
-    authDomain: "signup4party.firebaseapp.com",
-    projectId: "signup4party",
-    storageBucket: "signup4party.firebasestorage.app",
-    messagingSenderId: "191939561469",
-    appId: "1:191939561469:web:2a89ec0d62d3be2dbbfb94"
-};
-
+// Firebase configuration is loaded from config.js
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 

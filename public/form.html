@@ -1,6 +1,7 @@
+<script src="./js/config.js"></script>
 <script>
     const partygoer = sessionStorage.getItem("partygoer")
-    console.log("formissa: " + sessionStorage.getItem("partygoer"))
+    console.log("at form: " + sessionStorage.getItem("partygoer"))
     if (partygoer) {
         document.addEventListener("DOMContentLoaded", () => {
             const emailInput = document.getElementById("email");

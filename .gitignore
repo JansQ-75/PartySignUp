@@ -68,5 +68,5 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 
-# Ignore environment files
-.env
+# Ignore Firebase configuration files
+config.js
