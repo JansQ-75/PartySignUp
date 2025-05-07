@@ -5,6 +5,7 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+// EventListener for submitting entered data
 document.querySelector('button').addEventListener('click', async () => {
     const fnameField = document.querySelector('#fname');
     const lnameField = document.querySelector('#lname');
@@ -12,12 +13,14 @@ document.querySelector('button').addEventListener('click', async () => {
     const pnumField = document.querySelector('#pnum');
     const addressField = document.querySelector('#address');
 
+    // Get values from fields
     const fname = fnameField.value;
     const lname = lnameField.value;
     const email = emailField.value;
     const pnum = pnumField.value;
     const address = addressField.value;
 
+    // Get values from checkboxes
     const milk = document.querySelector('#milk').checked ? 1 : 0;
     const egg = document.querySelector('#egg').checked ? 1 : 0;
     const gluten = document.querySelector('#gluten').checked ? 1 : 0;
@@ -25,6 +28,7 @@ document.querySelector('button').addEventListener('click', async () => {
     const fish = document.querySelector('#fish').checked ? 1 : 0;
     const other = document.querySelector('#other').value;
 
+    // Data to store in database
     const dataToSend = {
         fname,
         lname,
@@ -37,6 +41,7 @@ document.querySelector('button').addEventListener('click', async () => {
 
     console.log('Data to send:', JSON.stringify(dataToSend, null, 2));
 
+    // Storing data to Firestore database
     try {
         await addDoc(collection(db, "ilmoittautumiset"), dataToSend);
         console.log("Stored data successfully!");
@@ -46,14 +51,14 @@ document.querySelector('button').addEventListener('click', async () => {
         alert("Error storing data!");
       }
 
-    // Tyhjennetään lomakekentät
+    // Empty fields
     fnameField.value = "";
     lnameField.value = "";
     emailField.value = "";
     pnumField.value = "";
     addressField.value = "";
 
-    // Tyhjennetään checkboxit
+    // Empty checkboxes
     document.querySelector('#milk').checked = false;
     document.querySelector('#egg').checked = false;
     document.querySelector('#gluten').checked = false;
@@ -64,6 +69,7 @@ document.querySelector('button').addEventListener('click', async () => {
     
 });
 
+// EventListener for logging out
 document.querySelector("#logout").addEventListener("click", (event) => {
   event.preventDefault();
   sessionStorage.clear();

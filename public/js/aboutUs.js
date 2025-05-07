@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // EventListener for logging out
   document.querySelector("#logout").addEventListener("click", (event) => {
     event.preventDefault(); // prevent default function for the link
     sessionStorage.clear(); // Clears all session storage

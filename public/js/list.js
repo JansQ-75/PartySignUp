@@ -54,6 +54,7 @@ document.querySelector('#back2details').addEventListener('click', async () => {
   window.location.replace('./personDetails.html');  // return to personDetails.html
 });
 
+// EventListener for logging out
 document.querySelector("#logout").addEventListener("click", (event) => {
   event.preventDefault(); // prevent default function for the link
   sessionStorage.clear(); // Clears all session storage

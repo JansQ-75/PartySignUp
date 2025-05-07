@@ -17,7 +17,7 @@ button.addEventListener("click", async() => {
         for (const doc of querySnapshot.docs) {
             const data = doc.data();
             console.log(data);
-            if (data.email === email) {
+            if (data.email === email) { // if email exists in database, get the data and set boolean true
                 sessionStorage.setItem("userDetails", JSON.stringify(data));
                 email_exists = true;
                 break;
@@ -27,17 +27,18 @@ button.addEventListener("click", async() => {
         console.error("Error checking email:", error);
     }
     
+    // If email does not exist in database, allow to sign up
     if (!email_exists) {
 
         if (email) {
-            sessionStorage.setItem("partygoer", email);
+            sessionStorage.setItem("partygoer", email); // email is saved to sessionstorage for page functions (e.g. aboutUs.js)
             console.log("loginissa: " + sessionStorage.getItem("partygoer"))
             window.location.replace("./form.html");
         } else {
             alert("Invalid email. Please try again.");
             email_input.value = "";
         }
-    } else {
+    } else { // If email does exist, do not allow new sign up, shows only submitted data
         window.location.replace("./personDetails.html")
     }
     
