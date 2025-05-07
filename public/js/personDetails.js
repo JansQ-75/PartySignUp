@@ -12,14 +12,19 @@ if (userDetails) {
     const allergies = userDetails.allergies;    // get allergies from userDetails
     const allergyList = Object.keys(allergies)  
         .filter(key => allergies[key] === 1) // Filter only allergies with value 1
-        .map(key => key.charAt(0).toUpperCase() + key.slice(1)) // Change first letter to uppercase
-        .join(", "); // Join allergies with ", "
+        .map(key => key.charAt(0).toUpperCase() + key.slice(1)); // Change first letter to uppercase
+        
+    // Check if "other" field has a value
+    if (allergies.other && allergies.other.trim() !== "") {
+        const formattedOther = allergies.other.trim();
+        allergyList.push(`${formattedOther.charAt(0).toUpperCase() + formattedOther.slice(1)}`); // Add "other" value to the list
+    }
 
-    // add list of allergies to table cell
-    document.getElementById("allergiesValue").textContent = allergyList || "None";
+    // add list of allergies to table cell, joined with ", "
+    document.getElementById("allergiesValue").textContent = allergyList.length > 0 ? allergyList.join(", ") : "None";
 } else {
     console.error("User data was not found." + error);
-    alert("User data was not found.")
+    alert("User data was not found.");
 }
 
 document.querySelector("#logout").addEventListener("click", (event) => {
