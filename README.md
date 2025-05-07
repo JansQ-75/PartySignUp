@@ -1,7 +1,17 @@
 # PartySignUp
 
+_School project for Frontend Web Development_
+
 **PartySignUp** is a web application for signing up for a party.
 The app is hosted via Firebase and data is stored in Firestore.
+
+## Table of contents
+
+- [About the application](#about-the-application)
+- [Hosting with Firebase](#hosting-with-firebase)
+    - [Setting Up Firebase](#setting-up-firebase)
+    - [Installing Firebase tools and Deploying](#installing-firebase-tools-and-deploying)
+- [Links](#links)
 
 ## About the application
 
@@ -42,7 +52,7 @@ Firebase offers both free and pay-as-you-go pricing plans. The free tier is suff
 ![FirestorePricing](./public/images/firestore.png)
 
 
-### Setting Up Firebase
+### <u>Setting Up Firebase</u>
 
 **Create a Firebase project**
 
@@ -68,7 +78,7 @@ Firebase offers both free and pay-as-you-go pricing plans. The free tier is suff
 4. Copy the provided configuration and paste it into a new file named `config.js` in your _js/_ folder
     ![FirebaseConfiguration](./public/images/config.png)
 
-#### Installing Firebase tools and Deploying
+### <u>Installing Firebase tools and Deploying</u>
 
 1. Run the following in your terminal:
 ```
@@ -94,5 +104,3 @@ firebase deploy
     - _Hosted on Firebase_
 - [Demo Video](https://youtu.be/0FgJx9zbAdE)
    - _Demo video about the web application_
-
-[]
