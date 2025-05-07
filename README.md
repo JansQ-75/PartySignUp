@@ -42,7 +42,7 @@ Firebase offers both free and pay-as-you-go pricing plans. The free tier is suff
 ![FirestorePricing](./public/images/firestore.png)
 
 
-#### Setting Up Firebase
+### Setting Up Firebase
 
 **Create a Firebase project**
 
